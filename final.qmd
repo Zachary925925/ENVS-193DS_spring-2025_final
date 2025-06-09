@@ -110,7 +110,29 @@ e:
 0 means it was occupied by any bird species.
 
 ## b.
+Swift Parrots are the target species for the nest boxes and are critically endangered, and Common Starlings and Tree Martins are considered competitors that may occupy the boxes at the expense of the Swift Parrots. Unlike the other two species, Swift Parrots rarely breed in the same location in successive years, making permanent nest boxes less effective for them and more likely to benefit the competitors.
 
+## c.
+The two “seasons” in this study are 2016/2017, when the nest boxes were just put up, and 2019/2020, three years later. The main difference is that the boxes were new in the first season, but had already been around for a while in the second season, which means more time for other birds to find and start using them.
+
+## d.
+```{r}
+
+model_table <- data.frame( 
+  Model_Number = 1:4,
+  Season = c("No", "Yes", "No", "Yes"), # season options
+  Distance_to_Forest_Edge = c("No", "No", "Yes", "Yes"), # distance options
+  Model_Description = c( # model options
+    "Null model: no predictors.",
+    "Season model: includes only season.",
+    "Edge model: includes only distance to forest edge.",
+    "Saturated model: includes both season and distance to forest edge (and interaction if needed)."
+  )
+)
+
+print(model_table) # show table
+
+```
 
 
 
