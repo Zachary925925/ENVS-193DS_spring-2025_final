@@ -28,6 +28,14 @@ nest_boxes <- read_csv("data/occdist.csv")
 
 In part 1, they used \_\_\_\_\_\_\_. In part 2, they used \_\_\_\_\_\_\_.
 
+## b.
+
+## c.
+
+
+
+
+
 # Problem 2
 
 ## a.
@@ -191,7 +199,7 @@ mod_preds <- ggpredict(model4, terms = c("edge_distance [all]", "season"))# Gene
 mod_preds$group <- as.factor(mod_preds$group) # Convert to factor 
 nest_boxes$season <- as.factor(nest_boxes$season)
 
-predict_diagram <- 
+predict_diagram <- # to save the diagram
 ggplot() +
   geom_point( # add observation points
     data = nest_boxes,
@@ -236,6 +244,58 @@ ggplot() +
                                "lightblue")) +
   scale_y_continuous(limits = c(0, 1),
                      breaks = c(0, 0.5, 1))
+
+# to display the diagram
+ggplot() +
+  geom_point( # add observation points
+    data = nest_boxes,
+    aes(x = edge_distance,
+        y = sp, 
+        color = season),
+    size = 3,
+    alpha = 0.4
+  ) +
+  geom_ribbon( 
+    data = mod_preds,
+    aes(x = x,
+        y = predicted,
+        ymin = conf.low,
+        ymax = conf.high,
+        fill = group),
+    alpha = 0.4
+  ) +
+  geom_line( # add prediction lines
+    data = mod_preds,
+    aes(x = x, y = predicted,
+        color = group),
+    size = 1
+  ) +
+  labs(  # add labels 
+    x = "Distance to Forest Edge (m)",
+    y = "Probability of Occupancy by Swift Parrot",
+    color = "Season",
+    fill = "Season",
+    title = "Predicted Probability of Nest Box Occupancy by Swift Parrots"
+  ) +
+  theme_classic() +
+  theme(
+    legend.position = "right",
+    panel.grid.major = element_blank(),  # remove gridlines
+    panel.grid.minor = element_blank(), 
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  ) +
+  scale_color_manual(values = c("orange",
+                                "lightblue")) + #set up color maually
+  scale_fill_manual(values = c("orange", 
+                               "lightblue")) +
+  scale_y_continuous(limits = c(0, 1),
+                     breaks = c(0, 0.5, 1))
+
+```
+
+
+```{r}
+
 ```
 
 ## i.
