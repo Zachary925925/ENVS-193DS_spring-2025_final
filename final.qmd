@@ -5,12 +5,14 @@ author: Zach Wang
 date: 2025-06-08
 ---
 
-```{r}
+```{r setup}
 library(tidyverse)
 library(lubridate)
 library(ggplot2)
 library(car)
 library(scales)
+
+nest_boxes <- read_csv("data/occdist.csv")
 
 ```
 
@@ -88,6 +90,43 @@ ggplot(sst_filtered, aes(x = month, y = mean_monthly_sst, group = year, color = 
 ```
 
 # Problem 3
+## a.
+For 4 different columns:
+
+sp:
+1 means the nest box was occupied by a Swift Parrot for breeding during that season.
+0 means it was either empty or used by a different species.
+
+cs:
+1 means the box was occupied by a Common Starling.
+0 means it was occupied by another species or was empty.
+
+tm:
+1 means occupancy by a Tree Martin.
+0 means it was used by another species or unoccupied.
+
+e:
+1 means that the box remained unoccupied (empty).
+0 means it was occupied by any bird species.
+
+## b.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Problem 4
 
@@ -96,7 +135,7 @@ In homework 2, my data is represented by scatter plot. To read the data, I will 
 
 The two visualizations both are presenting individual observations. 
 
-In both visualizations you will be able to see counts and relation between varribles. But if I arrange my visualization from homework 3 in time order, you can see by sleeping time trend through time. You can also see extra information in the data set such as if I did a running or the average heart rate of that day.
+In both visualizations you will be able to see counts and relation between variables. But if I arrange my visualization from homework 3 in time order, you can see by sleeping time trend through time. You can also see extra information in the data set such as if I did a running or the average heart rate of that day.
 
 I was told that I could add more variables into this visualization. So other than using the width and height of triangles to represent burned calories and sleeping time, I try to add a bar at the to to show if I did running or not. I also try to tier the HRV into (40-45 46-50 51-55 56-60) four levels, and give each of them a different color to show the HRV level at that day. 
 
