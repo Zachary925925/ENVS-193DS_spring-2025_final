@@ -135,7 +135,7 @@ print(model_table) # show table
 
 ```
 
-## e.
+## e. ???
 ```{r}
 
 nest_boxes$season <- as.factor(nest_boxes$season) # make season (year) as a factor
@@ -169,6 +169,13 @@ plot(simulateResiduals(model4), title = "Saturated model")
 
 ```
 
+## g.
+```{r}
+model.sel(model1,
+          model2,
+          model3,
+          model4)
+```
 
 
 
