@@ -5,6 +5,16 @@ author: Zach Wang
 date: 2025-06-08
 ---
 
+```{r}
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+library(car)
+
+
+```
+
+
 # Problem 1
 
 ## a.
