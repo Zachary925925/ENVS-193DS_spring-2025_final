@@ -15,6 +15,8 @@ library(MuMIn)
 library(DHARMa)
 library(ggplot2)
 library(ggeffects)
+library(broom)
+library(dplyr)
 
 nest_boxes <- read_csv("data/occdist.csv")
 
@@ -252,27 +254,16 @@ print(predicted_probs) # print output
 ## j.
 Swift Parrots tend to occupy nest boxes more often when they are close to the forest edge.
 ```{r}
-print(model4)
-print(predicted_probs)
+gtsummary::tbl_regression(model4, exponentiate = TRUE) #summarize the model
+
+print(predicted_probs) #print prediction & diagram as evidence
 print(predict_diagram)
 ```
 
 
-With every 100 m increase in distance from the forest edge, the odds of a Swift Parrot occupying a nest box decrease by a factor of 0.51 (95% CI: [0.30, 0.85], p = 0.008, α = 0.05).
+With every 1m increase in distance from the forest edge, the odds of a Swift Parrot occupying a nest box decrease by a factor of 0.46 (95% CI: [0.23, 0.89], p = 0.022, α = 0.05).
 
 At the forest edge (0 m), the probability of a Swift Parrot occupying a nest box is 0.48 in 2016 (95% CI: [0.33, 0.64]) and 0.30 in 2019 (95% CI: [0.18, 0.44]). At 900 m from the forest edge, the probabilities decrease to 0.12 in 2016 (95% CI: [0.06, 0.24]) and 0.06 in 2019 (95% CI: [0.03, 0.13]).
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # Problem 4
@@ -286,7 +277,8 @@ In both visualizations you will be able to see counts and relation between varia
 
 I was told that I could add more variables into this visualization. So other than using the width and height of triangles to represent burned calories and sleeping time, I try to add a bar at the to to show if I did running or not. I also try to tier the HRV into (40-45 46-50 51-55 56-60) four levels, and give each of them a different color to show the HRV level at that day. 
 
-
+## b.
+Done in workshop.
 
 
 
