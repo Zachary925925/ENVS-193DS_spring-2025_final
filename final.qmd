@@ -52,8 +52,7 @@ str(sst_clean) #structure of sst_clean
 ```{r}
 
 
-# Filter data for 2018 to 2023
-sst_filtered <- sst_clean |>
+sst_filtered <- sst_clean |> # Filter data for 2018 to 2023
   filter(year %in% as.character(2018:2023))
 
 # Create the plot
