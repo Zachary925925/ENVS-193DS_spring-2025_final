@@ -14,7 +14,6 @@ library(scales)
 
 ```
 
-
 # Problem 1
 
 ## a.
@@ -24,6 +23,7 @@ In part 1, they used \_\_\_\_\_\_\_. In part 2, they used \_\_\_\_\_\_\_.
 # Problem 2
 
 ## a.
+
 ```{r}
 
 
@@ -46,7 +46,9 @@ str(sst_clean) #structure of sst_clean
 
 
 ```
-## b. 
+
+## b.
+
 ```{r}
 
 
@@ -86,18 +88,18 @@ ggplot(sst_filtered, aes(x = month, y = mean_monthly_sst, group = year, color = 
 
 ```
 
+# Problem 3
 
+# Problem 4
 
+## a.
+In homework 2, my data is represented by scatter plot. To read the data, I will have to combine the location of points and axes. But in homework 3, I use triangle shape to represent each individual observation (Width, Height, Bar). 
 
+The two visualizations both are presenting individual observations. 
 
+In both visualizations you will be able to see counts and relation between varribles. But if I arrange my visualization from homework 3 in time order, you can see by sleeping time trend through time. You can also see extra information in the data set such as if I did a running or the average heart rate of that day.
 
-
-
-
-
-
-
-
+I was told that I could add more variables into this visualization. So other than using the width and height of triangles to represent burned calories and sleeping time, I try to add a bar at the to to show if I did running or not. I also try to tier the HRV into (40-45 46-50 51-55 56-60) four levels, and give each of them a different color to show the HRV level at that day. 
 
 
 
