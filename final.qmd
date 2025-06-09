@@ -235,7 +235,8 @@ ggplot() +
                      breaks = c(0, 0.5, 1))
 ```
 
-
+## i.
+This figure shows the predicted probability of nest box occupancy by Swift Parrots as a function of distance to the forest edge (in meters) for the breeding seasons of 2016 in orange and 2019 in blue. Solid lines represent model predictions, and shaded ribbons indicate 95% confidence intervals. Jittered points along the x-axis show the underlying observed data (occupancy: 1 = occupied, 0 = not occupied). The model shows a consistent decline in occupancy probability as distance to forest edge increases, with overall higher probabilities in 2016 than in 2019.
 
 
 
