@@ -1,0 +1,17 @@
+---
+title: "ES193DS Spring final"
+format: html
+author: Zach Wang
+date: 2025-06-08
+---
+
+# Problem 1
+
+## a.
+
+In part 1, they used \_\_\_\_\_\_\_. In part 2, they used \_\_\_\_\_\_\_.
+
+# Problem 2
+
+## a.
+
