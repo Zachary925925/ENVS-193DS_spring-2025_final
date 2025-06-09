@@ -10,7 +10,7 @@ library(tidyverse)
 library(lubridate)
 library(ggplot2)
 library(car)
-
+library(scales)
 
 ```
 
@@ -24,4 +24,87 @@ In part 1, they used \_\_\_\_\_\_\_. In part 2, they used \_\_\_\_\_\_\_.
 # Problem 2
 
 ## a.
+```{r}
+
+
+sst <- read_csv("data/SST_update2023.csv") # Read in the data
+
+# Clean
+sst_clean <- sst |>
+  mutate(year = as.factor(year(ymd(date)))) |> # Extract year 
+  mutate(month = factor(month(ymd(date), 
+                              label = TRUE, abbr = TRUE), # extract month
+                        levels = month.abb, 
+                        ordered = TRUE)) |>
+  group_by(year, month) |> # Group by year and month
+  summarize(mean_monthly_sst = mean(temp, na.rm = TRUE), 
+            .groups = "drop")   # mean monthly SST
+
+
+sst_clean |> slice_sample(n = 5) # display 5 random rows 
+str(sst_clean) #structure of sst_clean
+
+
+```
+## b. 
+```{r}
+
+
+# Filter data for 2018 to 2023
+sst_filtered <- sst_clean |>
+  filter(year %in% as.character(2018:2023))
+
+# Create the plot
+ggplot(sst_filtered, aes(x = month, y = mean_monthly_sst, group = year, color = year)) +
+  # lines and points
+  geom_line() +
+  geom_point() +
+  
+  scale_color_manual(
+    values = colorRampPalette(c("lightblue",  # Color gradient from light to dark
+                                "darkblue"))(length(unique(sst_filtered$year)))
+  ) +
+  labs(  # labels and text
+    x = "Month",
+    y = "Mean monthly sea surface temperature (°C)",
+    color = "Year"
+  ) +
+  
+  
+  scale_x_discrete(drop = FALSE) + #  x-axis labels to display months in order
+  
+  theme( # make legend
+    legend.position = c(0.1, 0.75),    # Adjust position
+    legend.background = element_blank(), # No outline for legend box
+    panel.border = element_rect(color = "black", fill = NA), #panel outline
+    panel.background = element_rect(fill = "white"), # background color
+    panel.grid = element_blank() 
+  )
+
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
