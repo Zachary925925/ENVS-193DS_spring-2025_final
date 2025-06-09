@@ -189,6 +189,7 @@ mod_preds <- ggpredict(model4, terms = c("edge_distance [all]", "season"))# Gene
 mod_preds$group <- as.factor(mod_preds$group) # Convert to factor 
 nest_boxes$season <- as.factor(nest_boxes$season)
 
+predict_diagram <- 
 ggplot() +
   geom_point( # add observation points
     data = nest_boxes,
@@ -248,7 +249,18 @@ predicted_probs <- ggpredict( #calculation
 print(predicted_probs) # print output
 ```
 
+## j.
+Swift Parrots tend to occupy nest boxes more often when they are close to the forest edge.
+```{r}
+print(model4)
+print(predicted_probs)
+print(predict_diagram)
+```
 
+
+With every 100 m increase in distance from the forest edge, the odds of a Swift Parrot occupying a nest box decrease by a factor of 0.51 (95% CI: [0.30, 0.85], p = 0.008, α = 0.05).
+
+At the forest edge (0 m), the probability of a Swift Parrot occupying a nest box is 0.48 in 2016 (95% CI: [0.33, 0.64]) and 0.30 in 2019 (95% CI: [0.18, 0.44]). At 900 m from the forest edge, the probabilities decrease to 0.12 in 2016 (95% CI: [0.06, 0.24]) and 0.06 in 2019 (95% CI: [0.03, 0.13]).
 
 
 
