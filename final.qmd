@@ -11,7 +11,8 @@ library(lubridate)
 library(ggplot2)
 library(car)
 library(scales)
-
+library(MuMIn)
+library(DHARMa)
 nest_boxes <- read_csv("data/occdist.csv")
 
 ```
@@ -133,6 +134,32 @@ model_table <- data.frame(
 print(model_table) # show table
 
 ```
+
+## e.
+```{r}
+
+nest_boxes$season <- as.factor(nest_boxes$season) # make season (year) as a factor
+
+names(nest_boxes)[names(nest_boxes) == "edge distance"] <- "edge_distance" # change name for distance column
+
+model1 <- glm(sp ~ 1, data = nest_boxes, family = "binomial") # Null model
+
+
+model2 <- glm(sp ~ season, data = nest_boxes, family = "binomial") # Season model
+
+
+model3 <- glm(sp ~ edge_distance, data = nest_boxes, family = "binomial")# Edge model
+
+
+model4 <- glm(sp ~ season + edge_distance, data = nest_boxes, family = "binomial") # Saturated model
+
+```
+
+
+
+
+
+
 
 
 
