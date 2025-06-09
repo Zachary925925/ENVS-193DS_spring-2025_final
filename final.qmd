@@ -155,6 +155,19 @@ model4 <- glm(sp ~ season + edge_distance, data = nest_boxes, family = "binomial
 
 ```
 
+## f.
+```{r}
+
+plot(simulateResiduals(model1), title = "Null model")
+
+plot(simulateResiduals(model2), title = "Season model")
+
+plot(simulateResiduals(model3), title = "Edge Distance model")
+
+plot(simulateResiduals(model4), title = "Saturated model")
+
+
+```
 
 
 
