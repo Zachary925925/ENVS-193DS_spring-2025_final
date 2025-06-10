@@ -26,11 +26,9 @@ nest_boxes <- read_csv("data/occdist.csv")
 
 ## a.
 
-In part 1, they used Pearson's r correlation test. In part 2, they used ANOVA test.
+In part 1, they used \_\_\_\_\_\_\_. In part 2, they used \_\_\_\_\_\_\_.
 
 ## b.
-1. He should perform post-hoc tests (Tukey’s HSD) to identify which specific sources (urban land, fertilizer) differ significantly in their nitrogen load. This would help clarify which pairs of sources are different.
-2. he should also reporting effect size statistics, they would help quantify the magnitude of differences in nitrogen load between sources. This provides useful context on whether the significant differences found are small, moderate, or large effect size.
 
 ## c.
 
