@@ -15,3 +15,4 @@ Code folder:
 final.qmd --- this quarto doc is records Zach's answers to ES193DS spring final homework.
         
 ## Rendered output
+https://zachary925925.github.io/ENVS-193DS_spring-2025_final/final.html
