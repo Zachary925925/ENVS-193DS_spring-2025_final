@@ -34,10 +34,7 @@ In part 1, they used Pearson's r correlation test. In part 2, they used ANOVA te
 
 ## c.
 
-We found a moderate positive correlation between distance from headwater and annual total nitrogen load, suggesting that nitrogen load tends to increase with distance downstream. (Pearson’s r = correlation coefficient, p = 0.03, α = 0.05).
-
-
-We found a significant difference in average annual total nitrogen load between nitrogen sources, indicating that some sources contribute more nitrogen than others. (One-way ANOVA, F(df = degrees of freedom) = t (test statistic), p = 0.02, α = 0.05). Post-hoc comparisons (Tukey’s HSD), and with an effect sizes (samll/moderate/large).
+We found a moderate positive correlation between distance from headwater and annual total nitrogen load, suggesting that nitrogen load tends to increase with distance downstream. (Pearson’s r = correlation coefficient, p = 0.03, α = 0.05). We found a significant difference in average annual total nitrogen load between nitrogen sources, indicating that some sources contribute more nitrogen than others. (One-way ANOVA, F(df = degrees of freedom) = t (test statistic), p = 0.02, α = 0.05). Post-hoc comparisons (Tukey’s HSD: on average, urban land tend to have lower/higher nitrogen load than non urban land(delta kg/year, 95% CI[lower bound, upper bound]kg/year)), and with an effect sizes (samll/moderate/large).
 
 
 
